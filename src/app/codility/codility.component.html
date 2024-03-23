@@ -1,0 +1,17 @@
+<p>codility works!</p>
+
+<div class="app-wrapper">
+    <h1>My Friends</h1>
+      <ul>
+        <li *ngFor="let friend of topFriends" [attr.data-test-id]="'li-' + friend.name.toLowerCase()">
+          <span>{{ friend.name }} </span>
+          <button
+            [disabled]="isLiking[friend.name]"
+            [attr.data-test-id]="'button-' + friend.name.toLowerCase()"
+            (click)="likeFriend(friend)">
+            Like {{ friend.likeCount }}
+          </button>
+        </li>
+      </ul>
+      <h3 *ngIf="error">{{ error }}</h3>
+  </div>
